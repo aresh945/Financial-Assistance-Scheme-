@@ -111,6 +111,8 @@ Example request:
 ## Project Structure
 ```
 financial_assistance/
+├── docs/
+│   └── financial-assistance-api.postman_collection.json
 ├── cmd/
 │   └── api/
 │       └── main.go           # Application entry point
