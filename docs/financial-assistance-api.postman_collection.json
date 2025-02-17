@@ -1,0 +1,426 @@
+{
+	"info": {
+		"_postman_id": "24a57f90-96b6-41d0-a33f-0731174de991",
+		"name": "Financial Assistance Scheme",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "42370483"
+	},
+	"item": [
+		{
+			"name": "Post new applicant",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"id\": \"85680bd1-7531-4b78-80f7-c83c292b2c07\",\n    \"name\": \"Sarah Lee\",\n    \"employment_status\": \"employed\",\n    \"marital_status\": \"divorced\",\n    \"sex\": \"female\",\n    \"date_of_birth\": \"1988-03-15\",\n    \"household\": [\n\n    ]\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/applicants",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"applicants"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "New Request",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"id\": \"85680bd1-7531-4b78-80f7-c83c292b2c07\",\n    \"name\": \"Sarah Lee\",\n    \"employment_status\": \"employed\",\n    \"marital_status\": \"divorced\",\n    \"sex\": \"female\",\n    \"date_of_birth\": \"1988-03-15\",\n    \"household\": [\n\n    ]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/applicants",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"applicants"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 17 Feb 2025 04:20:51 GMT"
+						},
+						{
+							"key": "Content-Length",
+							"value": "1595"
+						}
+					],
+					"cookie": [],
+					"body": "[\n    {\n        \"id\": \"01913b7a-4493-74b2-93f8-e684c4ca935c\",\n        \"name\": \"James Smith\",\n        \"employment_status\": \"unemployed\",\n        \"marital_status\": \"single\",\n        \"sex\": \"male\",\n        \"date_of_birth\": \"1990-07-01T00:00:00Z\"\n    },\n    {\n        \"id\": \"01913b80-2c04-7f9d-86a4-497ef68cb3a0\",\n        \"name\": \"Mary Johnson\",\n        \"employment_status\": \"unemployed\",\n        \"marital_status\": \"married\",\n        \"sex\": \"female\",\n        \"date_of_birth\": \"1984-10-06T00:00:00Z\",\n        \"household\": [\n            {\n                \"id\": \"01913b88-1d4d-7152-a7ce-75796a2e8ecf\",\n                \"name\": \"Gwen Johnson\",\n                \"employment_status\": \"unemployed\",\n                \"sex\": \"female\",\n                \"date_of_birth\": \"2016-02-01T00:00:00Z\",\n                \"relation\": \"daughter\",\n                \"school_level\": \"primary\",\n                \"applicant_id\": \"01913b80-2c04-7f9d-86a4-497ef68cb3a0\"\n            }\n        ]\n    },\n    {\n        \"id\": \"01913b81-3e15-8f0e-97b5-598ef79dc4b1\",\n        \"name\": \"Sarah Lee\",\n        \"employment_status\": \"employed\",\n        \"marital_status\": \"divorced\",\n        \"sex\": \"female\",\n        \"date_of_birth\": \"1988-03-15T00:00:00Z\",\n        \"household\": [\n            {\n                \"id\": \"01913b88-2e5e-8263-b8df-86887a2e9fd0\",\n                \"name\": \"Tom Lee\",\n                \"employment_status\": \"unemployed\",\n                \"sex\": \"male\",\n                \"date_of_birth\": \"2015-05-20T00:00:00Z\",\n                \"relation\": \"son\",\n                \"school_level\": \"primary\",\n                \"applicant_id\": \"01913b81-3e15-8f0e-97b5-598ef79dc4b1\"\n            }\n        ]\n    },\n    {\n        \"id\": \"01913b82-4f26-9e1f-a8c6-6a9f80ed5c2c\",\n        \"name\": \"Michael Chen\",\n        \"employment_status\": \"employed\",\n        \"marital_status\": \"married\",\n        \"sex\": \"male\",\n        \"date_of_birth\": \"1982-12-20T00:00:00Z\"\n    },\n    {\n        \"id\": \"00000000-0000-0000-0000-000000000000\",\n        \"name\": \"John\",\n        \"employment_status\": \"unemployed\",\n        \"marital_status\": \"single\",\n        \"sex\": \"male\",\n        \"date_of_birth\": \"1990-01-15T00:00:00Z\"\n    },\n    {\n        \"id\": \"85680bd1-7531-4b78-80f7-c83c292b2c07\",\n        \"name\": \"Sarah Lee\",\n        \"employment_status\": \"employed\",\n        \"marital_status\": \"divorced\",\n        \"sex\": \"female\",\n        \"date_of_birth\": \"1988-03-15T00:00:00Z\"\n    }\n]"
+				}
+			]
+		},
+		{
+			"name": "Get all applicants",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": [
+				{
+					"name": "New Request",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/applicants",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"applicants"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 17 Feb 2025 04:21:38 GMT"
+						},
+						{
+							"key": "Content-Length",
+							"value": "1595"
+						}
+					],
+					"cookie": [],
+					"body": "[\n    {\n        \"id\": \"01913b7a-4493-74b2-93f8-e684c4ca935c\",\n        \"name\": \"James Smith\",\n        \"employment_status\": \"unemployed\",\n        \"marital_status\": \"single\",\n        \"sex\": \"male\",\n        \"date_of_birth\": \"1990-07-01T00:00:00Z\"\n    },\n    {\n        \"id\": \"01913b80-2c04-7f9d-86a4-497ef68cb3a0\",\n        \"name\": \"Mary Johnson\",\n        \"employment_status\": \"unemployed\",\n        \"marital_status\": \"married\",\n        \"sex\": \"female\",\n        \"date_of_birth\": \"1984-10-06T00:00:00Z\",\n        \"household\": [\n            {\n                \"id\": \"01913b88-1d4d-7152-a7ce-75796a2e8ecf\",\n                \"name\": \"Gwen Johnson\",\n                \"employment_status\": \"unemployed\",\n                \"sex\": \"female\",\n                \"date_of_birth\": \"2016-02-01T00:00:00Z\",\n                \"relation\": \"daughter\",\n                \"school_level\": \"primary\",\n                \"applicant_id\": \"01913b80-2c04-7f9d-86a4-497ef68cb3a0\"\n            }\n        ]\n    },\n    {\n        \"id\": \"01913b81-3e15-8f0e-97b5-598ef79dc4b1\",\n        \"name\": \"Sarah Lee\",\n        \"employment_status\": \"employed\",\n        \"marital_status\": \"divorced\",\n        \"sex\": \"female\",\n        \"date_of_birth\": \"1988-03-15T00:00:00Z\",\n        \"household\": [\n            {\n                \"id\": \"01913b88-2e5e-8263-b8df-86887a2e9fd0\",\n                \"name\": \"Tom Lee\",\n                \"employment_status\": \"unemployed\",\n                \"sex\": \"male\",\n                \"date_of_birth\": \"2015-05-20T00:00:00Z\",\n                \"relation\": \"son\",\n                \"school_level\": \"primary\",\n                \"applicant_id\": \"01913b81-3e15-8f0e-97b5-598ef79dc4b1\"\n            }\n        ]\n    },\n    {\n        \"id\": \"01913b82-4f26-9e1f-a8c6-6a9f80ed5c2c\",\n        \"name\": \"Michael Chen\",\n        \"employment_status\": \"employed\",\n        \"marital_status\": \"married\",\n        \"sex\": \"male\",\n        \"date_of_birth\": \"1982-12-20T00:00:00Z\"\n    },\n    {\n        \"id\": \"00000000-0000-0000-0000-000000000000\",\n        \"name\": \"John\",\n        \"employment_status\": \"unemployed\",\n        \"marital_status\": \"single\",\n        \"sex\": \"male\",\n        \"date_of_birth\": \"1990-01-15T00:00:00Z\"\n    },\n    {\n        \"id\": \"85680bd1-7531-4b78-80f7-c83c292b2c07\",\n        \"name\": \"Sarah Lee\",\n        \"employment_status\": \"employed\",\n        \"marital_status\": \"divorced\",\n        \"sex\": \"female\",\n        \"date_of_birth\": \"1988-03-15T00:00:00Z\"\n    }\n]"
+				}
+			]
+		},
+		{
+			"name": "Post new scheme",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"id\": \"a7ba7981-0554-4d44-af71-e01d26fec5df\",\n    \"name\": \"Family Employment Support\",\n    \"criteria\": {\n        \"employment_status\": \"employed\",\n        \"marital_status\": \"divorced\",\n        \"has_children\": true\n    },\n    \"benefits\": [\n        {\n            \"id\": \"80380d1b-8a65-4e1f-814c-1b20006dd75b\",\n            \"name\": \"Childcare Subsidy\",\n            \"amount\": 500.00\n        }\n    ]\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/schemes",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"schemes"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "New Request",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"id\": \"a7ba7981-0554-4d44-af71-e01d26fec5df\",\n    \"name\": \"Family Employment Support\",\n    \"criteria\": {\n        \"employment_status\": \"employed\",\n        \"marital_status\": \"divorced\",\n        \"has_children\": true\n    },\n    \"benefits\": [\n        {\n            \"id\": \"80380d1b-8a65-4e1f-814c-1b20006dd75b\",\n            \"name\": \"Childcare Subsidy\",\n            \"amount\": 500.00\n        }\n    ]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/schemes",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"schemes"
+							]
+						}
+					},
+					"status": "Created",
+					"code": 201,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 17 Feb 2025 04:25:27 GMT"
+						},
+						{
+							"key": "Content-Length",
+							"value": "272"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"id\": \"a7ba7981-0554-4d44-af71-e01d26fec5df\",\n    \"name\": \"Family Employment Support\",\n    \"criteria\": {\n        \"employment_status\": \"employed\",\n        \"marital_status\": \"divorced\",\n        \"has_children\": true\n    },\n    \"benefits\": [\n        {\n            \"id\": \"80380d1b-8a65-4e1f-814c-1b20006dd75b\",\n            \"name\": \"Childcare Subsidy\",\n            \"amount\": 500\n        }\n    ]\n}"
+				}
+			]
+		},
+		{
+			"name": "Get all schemes",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/schemes",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"schemes"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "New Request",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/schemes",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"schemes"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 17 Feb 2025 04:26:03 GMT"
+						},
+						{
+							"key": "Content-Length",
+							"value": "1916"
+						}
+					],
+					"cookie": [],
+					"body": "[\n    {\n        \"id\": \"02913b89-9a43-7163-8757-01cc254783f3\",\n        \"name\": \"Basic Unemployment Support\",\n        \"criteria\": {\n            \"employment_status\": \"unemployed\",\n            \"marital_status\": \"single\",\n            \"has_children\": false\n        }\n    },\n    {\n        \"id\": \"02913b89-befc-7ae3-bb37-3079aa7f1be0\",\n        \"name\": \"Family Support Package\",\n        \"criteria\": {\n            \"employment_status\": \"unemployed\",\n            \"marital_status\": \"married\",\n            \"has_children\": false\n        }\n    },\n    {\n        \"id\": \"02913b89-abcd-7ae3-bb37-3079aa7f1bf1\",\n        \"name\": \"Single Parent Career Support\",\n        \"criteria\": {\n            \"employment_status\": \"unemployed\",\n            \"marital_status\": \"single\",\n            \"has_children\": false\n        }\n    },\n    {\n        \"id\": \"02913b89-c1d2-8ae4-cc38-3079aa7f1bf1\",\n        \"name\": \"Single Parent Assistance\",\n        \"criteria\": {\n            \"employment_status\": \"unemployed\",\n            \"marital_status\": \"single\",\n            \"has_children\": false\n        }\n    },\n    {\n        \"id\": \"02913b89-a1b2-7c3d-8e9f-0123456789ab\",\n        \"name\": \"Working Parent Support\",\n        \"criteria\": {\n            \"employment_status\": \"employed\",\n            \"marital_status\": \"divorced\",\n            \"has_children\": false\n        }\n    },\n    {\n        \"id\": \"02913b89-c3d4-9e0f-1a2b-3456789abcde\",\n        \"name\": \"Single Parent Working Support\",\n        \"criteria\": {\n            \"employment_status\": \"employed\",\n            \"marital_status\": \"divorced\",\n            \"has_children\": false\n        }\n    },\n    {\n        \"id\": \"fa42b4f0-c648-43b8-8176-34f3c4f8e594\",\n        \"name\": \"Working Parent Educational Support\",\n        \"criteria\": {\n            \"employment_status\": \"employed\",\n            \"marital_status\": \"divorced\",\n            \"has_children\": false\n        }\n    },\n    {\n        \"id\": \"037bc612-c421-4907-a6e2-2ff75464456f\",\n        \"name\": \"Universal Skill Upgrade\",\n        \"criteria\": {\n            \"employment_status\": \"unemployed\",\n            \"marital_status\": \"\",\n            \"has_children\": false\n        }\n    },\n    {\n        \"id\": \"d2184fe3-8479-47af-867f-3029af08a06e\",\n        \"name\": \"Working Parent Educational Grant\",\n        \"criteria\": {\n            \"employment_status\": \"employed\",\n            \"marital_status\": \"married\",\n            \"has_children\": false\n        }\n    },\n    {\n        \"id\": \"2f3a17a9-a14b-4d8b-9418-faeac8443b12\",\n        \"name\": \"Entrepreneurship Support\",\n        \"criteria\": {\n            \"employment_status\": \"employed\",\n            \"marital_status\": \"\",\n            \"has_children\": false\n        }\n    },\n    {\n        \"id\": \"a7ba7981-0554-4d44-af71-e01d26fec5df\",\n        \"name\": \"Family Employment Support\",\n        \"criteria\": {\n            \"employment_status\": \"employed\",\n            \"marital_status\": \"divorced\",\n            \"has_children\": false\n        }\n    }\n]"
+				}
+			]
+		},
+		{
+			"name": "Get eligible schemes",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/schemes/eligible?applicant=85680bd1-7531-4b78-80f7-c83c292b2c07",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"schemes",
+						"eligible"
+					],
+					"query": [
+						{
+							"key": "applicant",
+							"value": "85680bd1-7531-4b78-80f7-c83c292b2c07"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get applications",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": [
+				{
+					"name": "New Request",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/applications",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"applications"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 17 Feb 2025 04:28:29 GMT"
+						},
+						{
+							"key": "Content-Length",
+							"value": "184"
+						}
+					],
+					"cookie": [],
+					"body": "[\n    {\n        \"application_id\": \"03913b89-a1b2-7c3d-8e9f-0123456789ab\",\n        \"applicant_id\": \"01913b81-3e15-8f0e-97b5-598ef79dc4b1\",\n        \"scheme_id\": \"02913b89-a1b2-7c3d-8e9f-0123456789ab\",\n        \"status\": \"pending\"\n    }\n]"
+				}
+			]
+		},
+		{
+			"name": "Post new applications",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"application_id\": \"122b6d83-4b0a-4e83-a066-d14e4e6cf79d\",\n    \"applicant_id\": \"85680bd1-7531-4b78-80f7-c83c292b2c07\",\n    \"scheme_id\": \"a7ba7981-0554-4d44-af71-e01d26fec5df\",\n    \"status\": \"pending\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/applications",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"applications"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "New Request",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"application_id\": \"122b6d83-4b0a-4e83-a066-d14e4e6cf79d\",\n    \"applicant_id\": \"85680bd1-7531-4b78-80f7-c83c292b2c07\",\n    \"scheme_id\": \"a7ba7981-0554-4d44-af71-e01d26fec5df\",\n    \"status\": \"pending\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/applications",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"applications"
+							]
+						}
+					},
+					"status": "Created",
+					"code": 201,
+					"_postman_previewlanguage": "plain",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Mon, 17 Feb 2025 04:34:35 GMT"
+						},
+						{
+							"key": "Content-Length",
+							"value": "0"
+						}
+					],
+					"cookie": [],
+					"body": null
+				}
+			]
+		}
+	]
+}
