@@ -1,6 +1,8 @@
 package models
 
 import (
+	"encoding/json"
+	"fmt"
 	"time"
 
 	"github.com/google/uuid"
@@ -25,4 +27,34 @@ type HouseholdMember struct {
 	Relation         string    `json:"relation" db:"relation"`
 	SchoolLevel      string    `json:"school_level" db:"school_level"`
 	ApplicantID      uuid.UUID `json:"applicant_id" db:"applicant_id"`
+}
+
+func (a *Applicant) UnmarshalJSON(data []byte) error {
+	type Alias Applicant
+	aux := &struct {
+		DateOfBirth string `json:"date_of_birth"`
+		*Alias
+	}{
+		Alias: (*Alias)(a),
+	}
+
+	if err := json.Unmarshal(data, &aux); err != nil {
+		return err
+	}
+
+	var parsedTime time.Time
+	var err error
+
+	parsedTime, err = time.Parse(time.RFC3339, aux.DateOfBirth)
+	if err != nil {
+		parsedTime, err = time.Parse("2006-01-02", aux.DateOfBirth)
+	}
+
+	if err != nil {
+		return fmt.Errorf("invalid date format: %v", err)
+	}
+
+	a.DateOfBirth = parsedTime
+
+	return nil
 }

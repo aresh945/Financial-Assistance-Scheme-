@@ -63,12 +63,28 @@ func (h *Handler) GetAllApplicants(w http.ResponseWriter, r *http.Request) {
 
 func (h *Handler) CreateApplication(w http.ResponseWriter, r *http.Request) {
 	var application models.Application
-	if err := json.NewDecoder(r.Body).Decode(&application); err != nil {
-		http.Error(w, "Invalid request body", http.StatusBadRequest)
+
+	body, err := io.ReadAll(r.Body)
+	if err != nil {
+		log.Printf("Error reading body: %v", err)
+		http.Error(w, "Error reading request body", http.StatusBadRequest)
 		return
 	}
 
+	log.Printf("Received application JSON: %s", string(body))
+
+	err = json.Unmarshal(body, &application)
+	if err != nil {
+		log.Printf("Error decoding application JSON: %v", err)
+		log.Printf("Problematic JSON: %s", string(body))
+		http.Error(w, fmt.Sprintf("Invalid request body: %v", err), http.StatusBadRequest)
+		return
+	}
+
+	log.Printf("Decoded Application: %+v", application)
+
 	if err := h.service.CreateApplication(r.Context(), &application); err != nil {
+		log.Printf("Error creating application: %v", err)
 		http.Error(w, "Failed to create application", http.StatusInternalServerError)
 		return
 	}
